@@ -1,0 +1,28 @@
+Spring Boot Actuators :::
+It includes a number of additional features that help us to monitor and manage the Spring Boot application. It contains the actuator endpoints. i.e health, metrics, info, dump, env. It helps us to monitor  our application.
+
+URL::
+ / actuators
+Purpose::
+  This is used to view the all endpoints which are exposed by the spring boot actuators dependency.
+/beans
+ It provides all the beans which we are using.
+/cache
+  It provides the cache related information.
+/health
+ It checks either our application is running or not.
+/ inof
+  information about our project.we can configure this which explains the information about our project using info as starting key. And we have to manually configure this in application.properties file.
+/conditions
+ it shows the positive matches and negtive matches.
+------
+** There is BuildInfoContributor which will show you the build related detials. we just need to define the build-  info goal.
+ - There are three ways to play info
+   * Using static data
+   * Using POM file
+   * Using Custom Contributor  [ Need to implment the InfoContributor (I)]
+---
+  if we want to create our own end_point we need to define one class and annotate with @Endpoint 
+  we can only give one value as payload it doesn't support the complex payload.
+  For path varibale we use the @Selector and for CRUD Operations [ @ReadOperation , @WriteOperation , @DeleteOperation]
+  
